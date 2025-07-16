@@ -5,7 +5,7 @@ const posts = [
   // add more...
 ];
 
-export default function Blog() {
+ function Blog() {
   return (
     <section id="blog">
       <h2>Blog</h2>
@@ -21,3 +21,4 @@ export default function Blog() {
     </section>
   );
 }
+export default Blog;

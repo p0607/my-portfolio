@@ -1,0 +1,182 @@
+/* about.css */
+.header {
+  position: relative;
+  z-index: 10; /* Higher than both lanterns and content */
+}
+.about-container {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+}
+
+.about-content {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating Lanterns */
+.floating-lantern {
+  will-change: transform, opacity; /* Optimize for animations */
+  backface-visibility: hidden;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(var(--end-position));
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-text {
+    padding-right: 0;
+    order: 1;
+    font-size: 2rem;
+  }
+  
+  .about-image-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.about-image {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+.image-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: inset 0 0 30px rgba(255,255,255,0.6);
+  pointer-events: none;
+}
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 3rem;
+  }
+  
+  .header p {
+    font-size: 1.5rem;
+  }
+  
+  .about-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #95acfa, #a777e3);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Add to your about.css */
+.about-title {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.animated-title {
+  display: inline-block;
+  position: relative;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+.animated-title::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: translateX(-100%);
+  animation: shine 4s infinite;
+}
+
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(255,215,0,0.3);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255,215,0,0.7), 
+                 0 0 30px rgba(255,165,0,0.4);
+  }
+}
+
+@keyframes shine {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Enhanced typing animation */
+
+
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+

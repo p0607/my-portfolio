@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
-export default function Footer() {
+ function Footer() {
   return (
     <footer className="footer">
       <a href="https://github.com/you" target="_blank" rel="noopener noreferrer"><FaGithub size={24} /></a>
@@ -10,3 +10,4 @@ export default function Footer() {
     </footer>
   );
 }
+export default Footer;

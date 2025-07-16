@@ -6,7 +6,7 @@ const projects = [
   // add more...
 ];
 
-export default function Projects() {
+function Projects() {
   return (
     <section id="projects">
       <h2>Projects</h2>
@@ -21,3 +21,4 @@ export default function Projects() {
     </section>
   );
 }
+export default Projects;
